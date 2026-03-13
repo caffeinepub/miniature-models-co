@@ -55,6 +55,22 @@ export const SAMPLE_PRODUCTS = [
     price: 890,
     image: "/assets/generated/jaguar-etype.dim_800x600.jpg",
   },
+  {
+    id: "sample-6",
+    name: "Ferrari F40",
+    description: "Ferrari F40 replica papercraft",
+    scaleSize: "1:1",
+    price: 12,
+    image: "/assets/generated/ferrari-f40-papercraft.dim_800x600.jpg",
+  },
+  {
+    id: "sample-7",
+    name: "Nissan GTR Skyline",
+    description: "Nissan GTR skyline replica papercraft",
+    scaleSize: "1:1",
+    price: 12,
+    image: "/assets/generated/nissan-gtr-skyline-papercraft.dim_800x600.jpg",
+  },
 ];
 
 export function CatalogPage() {
