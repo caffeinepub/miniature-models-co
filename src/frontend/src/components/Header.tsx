@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
-import { ChevronRight, Settings, ShoppingCart } from "lucide-react";
+import { Settings, ShoppingCart } from "lucide-react";
 import { useCart } from "../contexts/CartContext";
 import { useInternetIdentity } from "../hooks/useInternetIdentity";
 import { useIsAdmin } from "../hooks/useQueries";
@@ -47,26 +48,23 @@ export function Header() {
             Catalog
           </Link>
           {showAdminLink && (
-            <Link
-              to="/admin"
-              data-ocid="nav.admin_link"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1"
-            >
-              <Settings className="w-3.5 h-3.5" />
-              Admin
+            <Link to="/admin" data-ocid="nav.admin_link">
+              <Button variant="outline" size="sm" className="gap-1.5">
+                <Settings className="w-3.5 h-3.5" />
+                Admin
+              </Button>
             </Link>
           )}
         </nav>
 
-        {/* Cart */}
+        {/* Right side */}
         <div className="flex items-center gap-3">
           {showAdminLink && (
-            <Link
-              to="/admin"
-              data-ocid="nav.admin_link"
-              className="md:hidden text-muted-foreground hover:text-foreground"
-            >
-              <Settings className="w-5 h-5" />
+            <Link to="/admin" data-ocid="nav.admin_link" className="md:hidden">
+              <Button variant="outline" size="sm" className="gap-1.5">
+                <Settings className="w-4 h-4" />
+                Admin
+              </Button>
             </Link>
           )}
           <Link
@@ -82,7 +80,6 @@ export function Header() {
               </Badge>
             )}
           </Link>
-          <ChevronRight className="w-4 h-4 text-muted-foreground hidden" />
         </div>
       </div>
     </header>
